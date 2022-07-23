@@ -667,7 +667,7 @@
             this.Controls.Add(this.TINYINTnum);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimizeBox = false;
+            this.MaximizeBox = false;
             this.Name = "Main";
             this.Text = "MYSQL Size Calculator";
             this.Load += new System.EventHandler(this.Main_Load);

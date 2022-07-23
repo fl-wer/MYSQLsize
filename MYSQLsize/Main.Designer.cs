@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.TINYINTnum = new System.Windows.Forms.NumericUpDown();
             this.TINYINTlabel = new System.Windows.Forms.Label();
             this.SMALLINTlabel = new System.Windows.Forms.Label();
@@ -604,7 +605,7 @@
             // 
             // forSelection
             // 
-            this.forSelection.Location = new System.Drawing.Point(32767, 32767);
+            this.forSelection.Location = new System.Drawing.Point(32736, 32690);
             this.forSelection.Name = "forSelection";
             this.forSelection.Size = new System.Drawing.Size(120, 20);
             this.forSelection.TabIndex = 66;
@@ -665,6 +666,7 @@
             this.Controls.Add(this.TINYINTlabel);
             this.Controls.Add(this.TINYINTnum);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimizeBox = false;
             this.Name = "Main";
             this.Text = "MYSQL Size Calculator";

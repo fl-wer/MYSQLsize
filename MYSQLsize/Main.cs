@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Globalization;
 
 namespace MYSQLsize
 {
@@ -33,10 +34,10 @@ namespace MYSQLsize
             ROWSnum.Value;
 
             // store to string for later formatting
-            string kilobytes = (totalBytes / 1024).ToString("0.00", System.Globalization.CultureInfo.InvariantCulture);
-            string megabytes = (totalBytes / 1048576).ToString("0.00", System.Globalization.CultureInfo.InvariantCulture);
-            string gigabytes = (totalBytes / 1073741824).ToString("0.00", System.Globalization.CultureInfo.InvariantCulture);
-            string terabytes = (totalBytes / 1099511627776).ToString("0.00", System.Globalization.CultureInfo.InvariantCulture);
+            string kilobytes = (totalBytes / 1024).ToString("0.00", CultureInfo.InvariantCulture);
+            string megabytes = (totalBytes / 1048576).ToString("0.00", CultureInfo.InvariantCulture);
+            string gigabytes = (totalBytes / 1073741824).ToString("0.00", CultureInfo.InvariantCulture);
+            string terabytes = (totalBytes / 1099511627776).ToString("0.00", CultureInfo.InvariantCulture);
 
             // assign formatted strings to labels
             KILOBYTEStextnum.Text = kilobytes;

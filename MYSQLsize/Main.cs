@@ -33,36 +33,10 @@ namespace MYSQLsize
             ROWSnum.Value;
 
             // store to string for later formatting
-            string kilobytes = (totalBytes / 1024).ToString();
-            string megabytes = (totalBytes / 1048576).ToString();
-            string gigabytes = (totalBytes / 1073741824).ToString();
-            string terabytes = (totalBytes / 1099511627776).ToString();
-
-            // leave only 2 numbers after a dot
-            if (kilobytes.Contains(".") && kilobytes.Length - kilobytes.IndexOf(".") > 3)
-                kilobytes = kilobytes.Remove(kilobytes.IndexOf(".") + 3);
-
-            if (megabytes.Contains(".") && megabytes.Length - megabytes.IndexOf(".") > 3)
-                megabytes = megabytes.Remove(megabytes.IndexOf(".") + 3);
-
-            if (gigabytes.Contains(".") && gigabytes.Length - gigabytes.IndexOf(".") > 3)
-                gigabytes = gigabytes.Remove(gigabytes.IndexOf(".") + 3);
-
-            if (terabytes.Contains(".") && terabytes.Length - terabytes.IndexOf(".") > 3)
-                terabytes = terabytes.Remove(terabytes.IndexOf(".") + 3);
-
-            // leave only 2 numbers after a comma
-            if (kilobytes.Contains(",") && kilobytes.Length - kilobytes.IndexOf(",") > 3)
-                kilobytes = kilobytes.Remove(kilobytes.IndexOf(",") + 3);
-
-            if (megabytes.Contains(",") && megabytes.Length - megabytes.IndexOf(",") > 3)
-                megabytes = megabytes.Remove(megabytes.IndexOf(",") + 3);
-
-            if (gigabytes.Contains(",") && gigabytes.Length - gigabytes.IndexOf(",") > 3)
-                gigabytes = gigabytes.Remove(gigabytes.IndexOf(",") + 3);
-
-            if (terabytes.Contains(",") && terabytes.Length - terabytes.IndexOf(",") > 3)
-                terabytes = terabytes.Remove(terabytes.IndexOf(",") + 3);
+            string kilobytes = (totalBytes / 1024).ToString("0.00", System.Globalization.CultureInfo.InvariantCulture);
+            string megabytes = (totalBytes / 1048576).ToString("0.00", System.Globalization.CultureInfo.InvariantCulture);
+            string gigabytes = (totalBytes / 1073741824).ToString("0.00", System.Globalization.CultureInfo.InvariantCulture);
+            string terabytes = (totalBytes / 1099511627776).ToString("0.00", System.Globalization.CultureInfo.InvariantCulture);
 
             // assign formatted strings to labels
             KILOBYTEStextnum.Text = kilobytes;

@@ -38,7 +38,7 @@ namespace MYSQLsize
             string gigabytes = (totalBytes / 1073741824).ToString();
             string terabytes = (totalBytes / 1099511627776).ToString();
 
-            // leave only 2 numbers after dot
+            // leave only 2 numbers after a dot
             if (kilobytes.Contains(".") && kilobytes.Length - kilobytes.IndexOf(".") > 3)
                 kilobytes = kilobytes.Remove(kilobytes.IndexOf(".") + 3);
 
@@ -50,6 +50,19 @@ namespace MYSQLsize
 
             if (terabytes.Contains(".") && terabytes.Length - terabytes.IndexOf(".") > 3)
                 terabytes = terabytes.Remove(terabytes.IndexOf(".") + 3);
+
+            // leave only 2 numbers after a comma
+            if (kilobytes.Contains(",") && kilobytes.Length - kilobytes.IndexOf(",") > 3)
+                kilobytes = kilobytes.Remove(kilobytes.IndexOf(",") + 3);
+
+            if (megabytes.Contains(",") && megabytes.Length - megabytes.IndexOf(",") > 3)
+                megabytes = megabytes.Remove(megabytes.IndexOf(",") + 3);
+
+            if (gigabytes.Contains(",") && gigabytes.Length - gigabytes.IndexOf(",") > 3)
+                gigabytes = gigabytes.Remove(gigabytes.IndexOf(",") + 3);
+
+            if (terabytes.Contains(",") && terabytes.Length - terabytes.IndexOf(",") > 3)
+                terabytes = terabytes.Remove(terabytes.IndexOf(",") + 3);
 
             // assign formatted strings to labels
             KILOBYTEStextnum.Text = kilobytes;
